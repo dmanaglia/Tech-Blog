@@ -23,6 +23,29 @@ header {
     border-style: solid;
     border-color: black;
     margin-top: 15px;
+    display: flex;
+}
+
+.card {
+    flex-direction: column;
+}
+
+.comment-body {
+    margin: 10px 0 0 10px;
+
+}
+
+.comment-info {
+    align-self: last baseline;
+    background: black;
+    color: #a9c9b1;
+    padding: 5px 0 0 5px;
+    border-radius: 10px 0 0 0;
+}
+
+.comment {
+    justify-content: space-between;
+    height: 60px;
 }
 
 .card-header {
@@ -36,13 +59,32 @@ header {
 .card-body {
     height: 100px;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    margin: 20px;
+    font-size: x-large;
+    align-items: flex-start;
+    justify-content: flex-start;
 }
 
 a {
     text-decoration: none;
-    
+}
+
+#navToSignUp,
+#navToLogin, 
+.comment-btn {
+    align-self: end;
+    background-color: black;
+    color: #a9c9b1;
+    padding: 20px;
+    font-size: xx-large;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    border-radius: 10px;
+}
+
+.comment-btn {
+    align-self: center;
+    margin-top: 20px;
 }
 
 .custom-nav a {
@@ -53,7 +95,8 @@ a {
 
 #main-h1 {
     background-color: #a9c9b1;
-    width: 45%;
+    width: fit-content;
+    padding: 10px;
     text-align: center;
     color: black;
     border-radius: 10px;
@@ -66,8 +109,34 @@ a {
 .post-info,
 .card-header h2 {
     color: #a9c9b1;
-    font-size: large;
+    font-size: xx-large;
     font-weight: 100;
+}
+
+.form-area {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-area h2 {
+    align-self: center;
+}
+
+.add-comment-form,
+.add-post-form,
+.update-post-form {
+    align-self: center;
+    display: flex;
+    flex-direction: column
+}
+
+.post-title {
+    margin-left: 10px;
+}
+
+textarea {
+    width: 80vw;
+    border-radius: 20px;
 }
 
 .login-form {
@@ -75,9 +144,22 @@ a {
     height: 50vh;
 }
 
+.add-comment-form button,
+.add-post-form button,
+.update-post-form button,
+.new-post-btn {
+    margin-top: 10px;
+    background: black;
+    color: #a9c9b1;
+    font-size: x-large;
+    padding: 10px;
+    border-radius: 10px;
+    align-self: center;
+}
+
 input {
     width: 50%;
-    height: 20px;
+    height: 30px;
     border-radius: 10px;
 }
 
@@ -85,4 +167,43 @@ input {
     justify-content: center;
     padding-top: 10px;
     padding-bottom: 10px;
+}
+
+label {
+    font-size: x-large;
+}
+
+#signUp-btn,
+#login-btn {
+    background: black;
+    color: #a9c9b1;
+    font-size: x-large;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+#signUp-btn:hover,
+#login-btn:hover {
+    cursor: pointer;
+}    
+
+.post-list {
+    background-color: black;
+    color: #a9c9b1;
+    margin: 20px;
+    padding: 20px;
+    font-size: x-large;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 15px;
+}
+
+.delete-btn {
+    margin-top: 30px;
+    background: red;
+    color: black;
+    font-size: x-large;
+    padding: 10px;
+    border-radius: 10px;
+    align-self: center;
 }

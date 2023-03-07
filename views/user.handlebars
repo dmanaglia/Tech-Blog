@@ -7,7 +7,14 @@
 </header>
 <main class="main-body">
     {{#each user.posts as |post|}}
-        <a href="/update-post/{{id}}">{{title}} posted on {{posted_on}}</a>
+        <a class="post-list" href="/update-post/{{id}}">
+            <div>
+                {{title}}
+            </div> 
+            <div>
+                posted on {{posted_on}}
+            </div>
+        </a>
     {{/each}}
     <a href="/add-post" class="new-post-btn">Add New Post</a>
 </main>

@@ -26,14 +26,16 @@ async function editFormHandler(event){
 }
 
 async function deletePost(){
-
-    const response = await fetch(`/api/posts/${post_id}`, {
-        method: 'DELETE'
-    });
-    if(response.status === 200){
-        document.location.replace(`/user`);
-    }else{
-        console.log('Ooops something went wrong');
+    let confirmtxt = "Are you sure you want to delete this post?";
+    if(confirm(confirmtxt)){
+        const response = await fetch(`/api/posts/${post_id}`, {
+            method: 'DELETE'
+        });
+        if(response.status === 200){
+            document.location.replace(`/user`);
+        }else{
+            console.log('Ooops something went wrong');
+        }
     }
 }
 
