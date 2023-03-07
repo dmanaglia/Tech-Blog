@@ -1,0 +1,9 @@
+<section class="card">
+    <a class="card-header" href="/posts/{{id}}">{{title}}</a>
+    <div class="card-body">{{text}}</div>
+    <div class="card-footer">
+        {{#each comments as |comment|}}
+        {{> comment-details}}
+        {{/each}}
+    </div>
+</section>
