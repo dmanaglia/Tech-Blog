@@ -1,9 +1,32 @@
+<header>
+    <nav class="custom-nav">
+        {{#if userId}}
+        <a href="/home/{{userId}}">Home</a>
+        <a href="/user/{{userId}}">Dashboard</a>
+        <a href="/">Logout</a>
+        {{else}}
+        <a href="/">Welcome</a>
+        <a href="/home">Home</a>
+        <a href="/login/1">Login</a>
+        {{/if}}
+    </nav>
+    <h1 id="main-h1">The Tech Blog</h1>
+</header>
+<main class="main-body">
 <section class="card">
-    <a class="card-header" href="/posts/{{id}}">{{title}}</a>
-    <div class="card-body">{{text}}</div>
+    <div class="card-header">
+        <p class="post-title">{{post.title}}</p>
+        <p class="post-info">{{post.user.username}} posted on {{post.createdAt}}</p>
+    </div>
+    <div class="card-body">{{post.text}}</div>
     <div class="card-footer">
-        {{#each comments as |comment|}}
-        {{> comment-details}}
-        {{/each}}
     </div>
 </section>
+{{#each post.comments as |comment|}}
+{{> comment-details}}
+{{/each}}
+{{#if userId}}
+<a class="comment-btn" href="/add-comment/{{post.id}}/{{userId}}">Add Comment</a>
+{{/if}}
+
+</main>

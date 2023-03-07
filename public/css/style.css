@@ -1,0 +1,88 @@
+body {
+    background-color: #a9c9b1;
+    margin: 0;
+    padding: 0;
+}
+
+.main-body {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+header {
+    background: black;
+    padding: 20px;
+}
+
+.card,
+.comment {
+    width: 90%;
+    align-self: center;
+    border-width: 5px;
+    border-style: solid;
+    border-color: black;
+    margin-top: 15px;
+}
+
+.card-header {
+    background-color: black;
+    width: max-content;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.card-body {
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+a {
+    text-decoration: none;
+    
+}
+
+.custom-nav a {
+    color: #a9c9b1;
+    margin-left: 20px;
+    margin-top: 5px;
+}
+
+#main-h1 {
+    background-color: #a9c9b1;
+    width: 45%;
+    text-align: center;
+    color: black;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    margin-left: 50px;
+    box-shadow: 6px 6px 0px gray;
+}
+
+.post-title,
+.post-info,
+.card-header h2 {
+    color: #a9c9b1;
+    font-size: large;
+    font-weight: 100;
+}
+
+.login-form {
+    flex-direction: column;
+    height: 50vh;
+}
+
+input {
+    width: 50%;
+    height: 20px;
+    border-radius: 10px;
+}
+
+#login-header {
+    justify-content: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}

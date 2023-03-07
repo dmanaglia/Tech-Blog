@@ -1,0 +1,53 @@
+<header>
+    <nav class="custom-nav">
+        <a href="/">Welcome</a>
+        <a href="/home">Home</a>
+    </nav>
+    <h1 id="main-h1">The Tech Blog</h1>
+</header>
+<main class="main-body">
+  <div class="card">
+    <div class="card-header" id="login-header">
+        {{#if login}}<h2>Login</h2>{{else}}<h2>Sign Up</h2>{{/if}}
+    </div>
+    <form class="card-body login-form">
+      {{#if login}}{{else}}
+      <label for="email">
+        Email:
+      </label>
+      <input id="email-input" name="email" type="email">
+      </input>
+      <br />
+      {{/if}}
+      <label for="username">
+        Username:
+      </label>
+      <input id="username-input" name="username" rows="1" cols="30">
+      </input>
+      <br />
+      <label for="password">
+        Password:
+      </label>
+      <input id="password-input" name="password" type="password">
+      </input>
+      <br />
+      {{#if login}}
+      <button id='login-btn' type="submit" value="Submit">
+        Login
+      </button>
+      {{else}}
+      <label for="password">
+        Confirm Password:
+      </label>
+      <input id="password-confirm" name="password" type="password">
+      </input>
+      <br />
+      <button id='signUp-btn' type="submit" value="Submit">
+        Sign Up
+      </button>
+      {{/if}}
+    </form>
+  {{#if login}}<a href="/login/0">Sign Up</a>{{else}}<a href="/login/1">Login</a>{{/if}}
+  </div>
+</main>
+<script src="/js/login.js"></script>

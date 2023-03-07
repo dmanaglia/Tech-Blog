@@ -1,0 +1,35 @@
+<header>
+    <nav class="custom-nav">
+        <a href="/home/{{userId}}">Home</a>
+        <a href="/user/{{userId}}">Dashboard</a>
+        <a href="/">Logout</a>
+    </nav>
+    <h1 id="main-h1">The Tech Blog</h1>
+</header>
+<main class="main-body">
+    <div class="form-area">
+        <h2>
+            Add Post
+        </h2>
+        <form class="add-post-form">
+            <label for="title">
+            Title:
+            </label>
+            <br />
+            <textarea id="title-text" name="title-text" rows="5" cols="30">
+            </textarea>
+            <br />
+            <label for="text">
+            Text:
+            </label>
+            <br />
+            <textarea id="post-text" name="post-text" rows="5" cols="30">
+            </textarea>
+            <br />
+            <button type="submit" value="Submit">
+            Submit Post
+            </button>
+        </form>
+    </div>
+</main>
+<script src="/js/post.js"></script>
