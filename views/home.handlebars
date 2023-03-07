@@ -1,3 +1,27 @@
-{{#each posts as |post|}}
-{{> post-details}}
-{{/each}}
+<header>
+    <nav class="custom-nav">
+        {{#if userId}}
+        <a href="/user/{{userId}}">Dashboard</a>
+        <a href="/">Logout</a>
+        {{else}}
+        <a href="/">Welcome</a>
+        <a href="/login/1">Login</a>
+        {{/if}}
+    </nav>
+    <h1 id="main-h1">The Tech Blog</h1>
+</header>
+<main class="main-body">
+    {{#each posts}}
+        <section class="card">
+            {{#if ../userId}}
+            <a class="card-header" href="/post/{{id}}/{{../userId}}">
+            {{else}}
+            <a class="card-header" href="/post/{{id}}">
+            {{/if}}
+                <p class="post-title">{{title}}</p>
+                <p class="post-info">{{user.username}} posted on {{createdAt}}</p>
+            </a>
+            <div class="card-body">{{text}}</div>
+        </section>
+    {{/each}}
+</main>
