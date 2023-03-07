@@ -7,7 +7,7 @@
 </header>
 <main class="main-body">
     {{#each user.posts as |post|}}
-        <a href="/post/{{id}}/{{../user.id}}">{{title}}</a>
+        <a href="/update-post/{{id}}/{{../user.id}}">{{title}}</a>
     {{/each}}
     <a href="/add-post/{{user.id}}" class="new-post-btn">Add New Post</a>
 </main>
