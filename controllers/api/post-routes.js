@@ -1,15 +1,18 @@
 const router = require('express').Router();
 const {Post} = require('../../models');
+const parseDate = require('../../utils/helpers')
 
 //endpoint /api/posts/
 
 //create new post
 router.post('/', async (req, res) => {
+    console.log(parseDate());
     try {
       const postData = await Post.create({
         title: req.body.title,
         text: req.body.text,
-        user_id: req.session.userId
+        user_id: req.session.userId,
+        posted_on: parseDate()
       });
       res.status(200).json(postData);
     } catch (err) {
@@ -24,6 +27,7 @@ router.put('/:id', async (req, res) => {
       {
         title: req.body.title,
         text: req.body.text,
+        posted_on: parseDate()
       },
       {
         where: {
