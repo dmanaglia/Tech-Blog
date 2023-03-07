@@ -20,6 +20,8 @@ async function editFormHandler(event){
     if(response.status === 200){
         document.location.replace(`/user`);
     }else{
+        let err = await response.json();
+        console.log(err);
         console.log('Ooops something went wrong');
     }
 }

@@ -1,14 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Post extends Model {
-  parseDate(){
-    const yyyy = this.updatedAt.getFullYear();
-    const mm = this.updatedAt.getMonth() + 1;
-    const dd = this.updatedAt.getDate();
-    return `${mm}/${dd}/${yyyy}`;
-  }
-}
+class Post extends Model {}
 
 Post.init(
   {
@@ -32,10 +25,15 @@ Post.init(
       model: 'user',
       key: 'id',
       }
+    },
+    posted_on: {
+      type: DataTypes.STRING,
+      allowNull: false
     }
   },
   {
     sequelize,
+    timestamps: false,
     freezeTableName: true,
     underscored: true,
     modelName: 'post',
