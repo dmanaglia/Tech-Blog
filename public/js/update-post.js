@@ -1,6 +1,5 @@
 const commentPath = window.location.toString().split('/');
-const user_id = commentPath[commentPath.length - 1] * 1;
-const post_id = commentPath[commentPath.length - 2] * 1;
+const post_id = commentPath[commentPath.length - 1] * 1;
 
 async function editFormHandler(event){
     event.preventDefault();
@@ -20,7 +19,7 @@ async function editFormHandler(event){
         }
     });
     if(response.status === 200){
-        document.location.replace(`/user/${user_id}`);
+        document.location.replace(`/user`);
     }else{
         console.log('Ooops something went wrong');
     }
@@ -32,7 +31,7 @@ async function deletePost(){
         method: 'DELETE'
     });
     if(response.status === 200){
-        document.location.replace(`/user/${user_id}`);
+        document.location.replace(`/user`);
     }else{
         console.log('Ooops something went wrong');
     }

@@ -1,13 +1,13 @@
 <header>
     <nav class="custom-nav">
-        <a href="/home/{{user.id}}">Home</a>
+        <a href="/home">Home</a>
         <a href="/">Logout</a>
     </nav>
     <h1 id="main-h1">{{user.username}}</h1>
 </header>
 <main class="main-body">
     {{#each user.posts as |post|}}
-        <a href="/update-post/{{id}}/{{../user.id}}">{{title}}</a>
+        <a href="/update-post/{{id}}">{{title}}</a>
     {{/each}}
-    <a href="/add-post/{{user.id}}" class="new-post-btn">Add New Post</a>
+    <a href="/add-post" class="new-post-btn">Add New Post</a>
 </main>

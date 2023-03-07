@@ -1,0 +1,18 @@
+<header>
+    <nav class="custom-nav">
+        <a href="/">Welcome</a>
+        <a href="/home">Home</a>
+        <a href="/login/1">Login</a>
+    </nav>
+    <h1 id="main-h1">The Tech Blog</h1>
+</header>
+<main class="main-body">
+    <section class="card">
+    {{#if expired}}
+    <div class="card-header">
+        <p class="post-title">Session Expired!</p>
+    </div>
+    {{/if}}
+    <div class="card-body">You must login or signup to view this page.</div>
+</section>
+</main>

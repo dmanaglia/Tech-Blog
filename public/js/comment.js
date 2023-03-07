@@ -1,6 +1,5 @@
 const commentPath = window.location.toString().split('/');
-const user_id = commentPath[commentPath.length - 1] * 1;
-const post_id = commentPath[commentPath.length - 2] * 1;
+const post_id = commentPath[commentPath.length - 1] * 1;
 
 async function editFormHandler(event){
     event.preventDefault();
@@ -11,15 +10,14 @@ async function editFormHandler(event){
         method: 'POST',
         body: JSON.stringify({
             text,
-            user_id,
-            post_id,
+            post_id
         }),
         headers: {
             'Content-Type': 'application/json',
         }
     });
     if(response.status === 200){
-        document.location.replace(`/post/${post_id}/${user_id}`);
+        document.location.replace(`/post/${post_id}`);
     }else{
         console.log('Ooops something went wrong');
     }

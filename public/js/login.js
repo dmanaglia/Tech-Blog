@@ -19,7 +19,7 @@ async function editFormHandler(event){
         });
         const responseData = await response.json();
         if(response.status === 200){
-            document.location.replace(`/home/${responseData.user.id}`);
+            document.location.replace(`/home`);
         } else {
             document.getElementById('login-header').innerHTML = responseData.message;
             document.getElementById('login-header').style.color = 'red';
@@ -43,7 +43,7 @@ async function editFormHandler(event){
             });
             const responseData = await response.json();
             if(response.status === 200){
-                document.location.replace(`/home/${responseData.id}`);
+                document.location.replace(`/home`);
             } else{
                 document.getElementById('login-header').innerHTML = "Ooops something went wrong";
                 document.getElementById('login-header').style.color = 'red';            
