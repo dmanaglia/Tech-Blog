@@ -92,4 +92,22 @@ router.get('/add-post/:userId', async (req, res) => {
   res.render('add-post', {userId});
 });
 
+//update post page
+router.get('/update-post/:postId/:userId', async (req, res) => {
+  try {
+    const userId = req.params.userId;
+    const postData = await Post.findByPk(req.params.postId, {
+      include: [
+        { model: User }, 
+        { model: Comment, as: "comments", include: [{model: User}]}
+      ]
+    });
+    const post = postData.get({ plain: true });
+    res.render('update-post', {post, userId});
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
 module.exports = router;
