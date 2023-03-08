@@ -6,7 +6,6 @@ const withAuth = require('../utils/auth');
 router.get('/', async (req, res) => {
   req.session.userId = null;
   req.session.loggedIn = false;
-  console.log(req.session);
   res.render('welcome');
 })
 
